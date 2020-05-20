@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/stasecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:background="@color/colorAccent"
+        android:text="开始第二个视图"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <Button
+        android:id="@+id/statmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="436dp"
+        android:background="@color/colorAccent"
+        android:text="开始一个MP视图"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <Button
+        android:id="@+id/voltage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="316dp"
+        android:background="@color/colorAccent"
+        android:text="获取电池电压"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <Button
+        android:id="@+id/stopthread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="364dp"
+        android:background="@color/colorAccent"
+        android:text="停止线程"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <Button
+        android:id="@+id/stathread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="252dp"
+        android:background="@color/colorAccent"
+        android:text="开始线程"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <Button
+        android:id="@+id/battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="284dp"
+        android:background="@color/colorAccent"
+        android:text="获取电池电量"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <Button
+        android:id="@+id/screenon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:background="@color/colorAccent"
+        android:text="socket通信"
+        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <Button
+        android:id="@+id/getnetname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:background="@color/colorAccent"
+        android:text="获取运营商名字"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <Button
+        android:id="@+id/socket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="204dp"
+        android:background="@color/colorAccent"
+        android:text="socket通信"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <Button
+        android:id="@+id/adc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:text="其他"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <Button
+        android:id="@+id/getwifiaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorAccent"
+        android:text="获取WiFi地址"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+    <TextView
+       android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047"
+        android:id="@+id/TV1"
+        />
+
+    <Button
+        android:id="@+id/installcert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:background="@color/colorAccent"
+        android:text="安装证书"
+        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV1"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

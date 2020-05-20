@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">toolstest</string>
+    <string name="title_activity_mpandroidchart">MPAndroidchart</string>
+    <string name="title_activity_secondactivity">secondactivity</string>
+    <string name="title_activity_activity2service">Activity2service</string>
+</resources>
