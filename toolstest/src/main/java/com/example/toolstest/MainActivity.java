@@ -127,6 +127,9 @@ public class MainActivity extends AppCompatActivity  implements getvoltagerecive
         final mycamera name=new mycamera();
         final Intent intent = new Intent(this, Myservices.class);
 
+         Log.v("TAG","");
+
+
         stasecond.setOnClickListener(new Button.OnClickListener() {
 
         			@Override
