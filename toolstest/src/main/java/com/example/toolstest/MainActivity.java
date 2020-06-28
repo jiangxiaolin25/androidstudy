@@ -60,7 +60,7 @@ import java.util.zip.ZipFile;
 
 public class MainActivity extends AppCompatActivity  implements getvoltagerecives.vollatames{
 
-     private Button mButton,installcert,getnetinfo ,scrennon,getbatter,stathread,stopthread,voltage,starmp,stasecond;
+     private Button mButton,installcert,getnetinfo ,scrennon,getbatter,stathread,stopthread,voltage,starmp,stasecond,handth;
       private TextView mTextView;
       private Ddi mDdi;
       private MyThread mMyThread;
@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity  implements getvoltagerecive
         setContentView(R.layout.activity_main);
         context = this;
         mButton=(Button) findViewById(R.id.getwifiaddress);
+        handth=(Button) findViewById(R.id.hangdthread);
         stathread=(Button) findViewById(R.id.stathread);
         stopthread=(Button) findViewById(R.id.stopthread);
         installcert=(Button) findViewById(R.id.installcert);
@@ -114,8 +115,8 @@ public class MainActivity extends AppCompatActivity  implements getvoltagerecive
         mGetAndroidinfo=new getAndroidinfo();
         mTextView=(TextView) findViewById(R.id.TV1);
 
-//        mgetvoltagerecives=new getvoltagerecives();
-//        mgetvoltagerecives.setMessage(this);
+        mgetvoltagerecives= new getvoltagerecives();
+        mgetvoltagerecives.setMessage(this);
 //        IntentFilter mFilter = new IntentFilter();
 //        // 添加接收网络连接状态改变的Action
 //        mFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
@@ -126,8 +127,19 @@ public class MainActivity extends AppCompatActivity  implements getvoltagerecive
         mDdi=new Ddi();
         final mycamera name=new mycamera();
         final Intent intent = new Intent(this, Myservices.class);
+        final Intent intent1=new Intent(this,handthreadactivity.class);
 
          Log.v("TAG","打印日志");
+        handth.setOnClickListener(new Button.OnClickListener() {
+
+         			@Override
+         			public void onClick(View v) {
+         				// TODO Auto-generated method stub
+                     intent1.setAction("android.intent.action.Mpandroidchartactivity2");
+                     intent1.addCategory("android.intent.category.Mpandroidchartactivity2");
+                       startActivity(intent1);
+         			}
+         		});
 
 
         stasecond.setOnClickListener(new Button.OnClickListener() {
@@ -311,12 +323,13 @@ public class MainActivity extends AppCompatActivity  implements getvoltagerecive
                         //这里要做一个判断不然又是新建了一个线程，又会重新开始一个线程
                         if (mMyThread==null){
                             mMyThread =new MyThread();
+                            mMyThread.start();
                         }
 
                         if(mMyThread.pause){
                             mMyThread.resumeThread();
                         }
-                        mMyThread.start();
+//                        mMyThread.start();
         			}
 
         		});
@@ -467,7 +480,7 @@ public class MainActivity extends AppCompatActivity  implements getvoltagerecive
         public void onSignalStrengthsChanged(SignalStrength signalStrength) {
 
 //            mStatisics.setSignal_strength(String.valueOf(signalStrength.getGsmSignalStrength()));
-            mTextView.setText(String.valueOf(signalStrength.getGsmSignalStrength()));
+//            mTextView.setText(String.valueOf(signalStrength.getGsmSignalStrength()));
 
 
         }
@@ -593,7 +606,10 @@ public class MainActivity extends AppCompatActivity  implements getvoltagerecive
             wifiManager.setWifiEnabled(true);
         }
         WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-        int frequency = wifiInfo.getFrequency();
+        int frequency = 0;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            frequency = wifiInfo.getFrequency();
+        }
         int ipAddress = wifiInfo.getIpAddress();
         String ip = intToIp(ipAddress);
         return ip+"p频段"+frequency;

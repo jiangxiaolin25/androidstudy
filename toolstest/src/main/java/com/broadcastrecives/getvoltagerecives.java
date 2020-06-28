@@ -112,8 +112,8 @@ public class getvoltagerecives extends BroadcastReceiver {
             String fname =sdf.format(new Date());
         voltagemes=fname+","+level+","+mvoltage+","+mtemperature+","+BatteryStatus+","+BatteryTemp;
 
-//        mes="电池电量："+level+"电池电压："+mvoltage;
-//        vollatames.getMsg(level,mvoltage);
+        mes="电池电量："+level+"电池电压："+mvoltage;
+        vollatames.getMsg(level,mvoltage);
 
 
 

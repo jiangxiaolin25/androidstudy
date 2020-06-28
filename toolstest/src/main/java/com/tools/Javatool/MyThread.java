@@ -51,7 +51,6 @@ public class MyThread extends Thread {
             while (pause){
                 index=toal;
                 onPause();
-
             }
             try {
                 System.out.println(index);

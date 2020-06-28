@@ -26,31 +26,31 @@
         >
 
         <Button
-            android:id="@+id/gettime"
-            android:layout_width="0dp"
+            android:id="@+id/btdelay3"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:text="获取时间">
+            android:text="延迟3S">
 
         </Button>
 
 
         <Button
-            android:id="@+id/bteventser"
-            android:layout_width="0dp"
+            android:id="@+id/btdelay5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
-            android:text="event服务"></Button>
+            android:text="延迟5S"></Button>
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/bteventac"
+            android:id="@+id/bthandpost"
             android:layout_marginLeft="20dp"
-            android:text="event界面"
+            android:text="handpost"
             >
 
         </Button>
@@ -94,13 +94,18 @@ android:layout_marginTop="70dp"
     >
 
 </Button>
+
+
 </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_marginTop="125dp"
         >
+
         <Button
             android:id="@+id/stafront"
             android:layout_width="wrap_content"
@@ -108,7 +113,10 @@ android:layout_marginTop="70dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:text="开始前置摄像头">
+
         </Button>
+
+
         <Button
             android:id="@+id/staback"
             android:layout_width="wrap_content"
@@ -116,6 +124,7 @@ android:layout_marginTop="70dp"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:text="开启后置摄像头"></Button>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
