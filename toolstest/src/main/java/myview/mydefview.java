@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.example.toolstest.R;
@@ -48,7 +49,7 @@ public class mydefview extends View {
     }
     public void initpaint() {
         mPaint=new Paint();
-        mPaint.setColor(Color.BLUE);   //设置颜色
+        mPaint.setColor(Color.RED);   //设置颜色
         mPaint.setStyle(Paint.Style.STROKE);//设置空心
         mPaint.setStrokeWidth(3);
         mBitmap= BitmapFactory.decodeResource(getResources(), R.drawable.xgd);
@@ -64,21 +65,40 @@ public class mydefview extends View {
      */
     @Override
     protected void onDraw(Canvas canvas) {
+         Log.v("TAG","onDraw");
+
 
         canvas.drawCircle(50,50,50,mPaint);
 
-        mPaint.setStyle(Paint.Style.FILL); //设置实心
+//        mPaint.setStyle(Paint.Style.FILL); //设置实心
         canvas.drawRect(10,120,110,170,mPaint);
 
         canvas.drawBitmap(mBitmap,10,200,null);
+
+//        canvas.drawARGB(255,255,218,185);
 
         super.onDraw(canvas);
     }
 
     @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+         Log.v("TAG","onLayout");
+
+    }
+
+
+    @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.v("TAG","onMeasure");
+
+
     }
+
+
+
+
 
 
 

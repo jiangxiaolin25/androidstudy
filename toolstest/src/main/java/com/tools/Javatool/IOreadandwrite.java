@@ -12,12 +12,16 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.RandomAccessFile;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by jiangxiaolin on 2019/8/22.
@@ -145,6 +149,53 @@ public class IOreadandwrite {
         aFile.close();
 
 
+    }
+
+    /**
+     * 读取文件到
+     * @param filePath 文件路径
+     * @return  返回第10大的数据
+     * @throws Exception
+     */
+    public static Integer name(String filePath) throws Exception {
+        // 读取文件
+        List<Integer> list = new ArrayList<>();
+        File file = new File(filePath);
+        // 判断文件是否存在
+        if (file.isFile() && file.exists()) {
+            InputStreamReader read = new InputStreamReader(new FileInputStream(file));
+            BufferedReader bufferedReader = new BufferedReader(read);
+            String lineTxt = null;
+            while ((lineTxt = bufferedReader.readLine()) != null) {
+                list.add(Integer.parseInt(lineTxt));
+            }
+            read.close();
+        }
+        // 打印
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+        // 排序
+        for (int i = 0; i < 10; i++) {
+            boolean flg = false;
+            for (int j = 0; j < list.size() - i - 1; j++) {
+                if (list.get(j) > list.get(j + 1)) {
+                    Integer aInteger = list.get(j);
+                    list.set(j, list.get(j + 1));
+                    list.set(j + 1, aInteger);
+                    flg = true;
+                }
+                if (flg = false) {// 每趟进行判断看是否进行了交换，如果没交换没说明已经有序，直接退出！
+
+                }
+            }
+        }
+        // 打印
+        System.out.println("..........................");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+        return list.get(list.size() - 10);
     }
 
     /**

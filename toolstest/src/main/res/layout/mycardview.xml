@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#50211403"
+    android:orientation="vertical"
+   >
+    <!--card_view:cardElevation 阴影的大小
+    card_view:cardMaxElevation 阴影最大高度
+    card_view:cardBackgroundColor 卡片的背景色
+    card_view:cardCornerRadius 卡片的圆角大小
+    card_view:contentPadding 卡片内容于边距的间隔-->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        card_view:cardBackgroundColor="#F0F4CD"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp"
+        card_view:cardElevation ="10dp"
+        >
+
+        <TextView
+            android:id="@+id/info_text_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="CardView1测试"
+            android:textSize="16sp" />
+
+    </android.support.v7.widget.CardView>
+
+
+
+</LinearLayout>

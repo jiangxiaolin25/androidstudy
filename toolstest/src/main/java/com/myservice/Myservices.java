@@ -56,14 +56,12 @@ public class Myservices extends Service {
 
         Notification.Builder builder = new Notification.Builder(this.getApplicationContext()); //获取一个Notification构造器
         Intent nfIntent = new Intent(this, MainActivity.class);
-
         builder.setContentIntent(PendingIntent.getActivity(this, 0, nfIntent, 0))
-                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.mipmap.abcd)) // 设置下拉列表中的图标(大图标)
+                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.mipmap.xgd)) // 设置下拉列表中的图标(大图标)
                 .setContentTitle("电池曲线测试") // 设置下拉列表里的标题
-                .setSmallIcon(R.mipmap.abcd) // 设置状态栏内的小图标
+                .setSmallIcon(R.mipmap.xgd) // 设置状态栏内的小图标
                 .setContentText("电池曲线正在测试中....") // 设置上下文内容
                 .setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
-
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             //修改安卓8.1以上系统报错
             NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ONE_ID, CHANNEL_ONE_NAME,                    NotificationManager.IMPORTANCE_MIN);
@@ -74,7 +72,6 @@ public class Myservices extends Service {
             manager.createNotificationChannel(notificationChannel);
             builder.setChannelId(CHANNEL_ONE_ID);
         }
-
         Notification notification = builder.build(); // 获取构建好的Notification
         notification.defaults = Notification.DEFAULT_SOUND; //设置为默认的声音
         startForeground(110,notification);

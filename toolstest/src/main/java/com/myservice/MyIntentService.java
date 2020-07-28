@@ -93,9 +93,9 @@ public class MyIntentService extends IntentService {
         Notification.Builder builder = new Notification.Builder(this.getApplicationContext()); //获取一个Notification构造器
         Intent nfIntent = new Intent(this, MainActivity.class);
         builder.setContentIntent(PendingIntent.getActivity(this, 0, nfIntent, 0))
-                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.mipmap.abcd)) // 设置下拉列表中的图标(大图标)
+                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.mipmap.xgd)) // 设置下拉列表中的图标(大图标)
                 .setContentTitle("电池曲线测试") // 设置下拉列表里的标题
-                .setSmallIcon(R.mipmap.abcd) // 设置状态栏内的小图标
+                .setSmallIcon(R.mipmap.xgd) // 设置状态栏内的小图标
                 .setContentText("电池曲线测试...") // 设置上下文内容
                 .setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
